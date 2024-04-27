@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=3 uid="uid://bghse6avrt2jw"]
+
+[ext_resource type="Script" path="res://pain.gd" id="1_2kcwn"]
+[ext_resource type="Texture2D" uid="uid://4pkc2gw3tehu" path="res://Art/Free/Main Characters/Mask Dude/Idle (32x32).png" id="1_jx2ff"]
+[ext_resource type="PackedScene" uid="uid://p7faemsih6rs" path="res://area_2d.tscn" id="2_pdqxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv3hy"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwjv2"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmc0h"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5x1sm"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwaww"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w17tl"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nolet"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv3so"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no6by"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64y55"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pubc"]
+atlas = ExtResource("1_jx2ff")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sdys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv3hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwjv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmc0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5x1sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwaww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w17tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nolet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv3so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no6by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64y55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pubc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_2kcwn")
+bullet_node = ExtResource("2_pdqxm")
+alpha = 1.316
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8sdys")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

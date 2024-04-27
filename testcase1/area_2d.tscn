@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://p7faemsih6rs"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_jy5nd"]
+[ext_resource type="Texture2D" uid="uid://bilst6poxje2h" path="res://Art/Free/Traps/Saw/Chain.png" id="2_sany4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7w64u"]
+radius = 3.16228
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_jy5nd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_sany4")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(5.96046e-08, 0)
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7w64u")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="screen_exited"]
