@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bghse6avrt2jw"]
 
-[ext_resource type="Script" path="res://pain.gd" id="1_2kcwn"]
+[ext_resource type="Script" path="res://collection/pain.gd" id="1_2kcwn"]
 [ext_resource type="Texture2D" uid="uid://4pkc2gw3tehu" path="res://Art/Free/Main Characters/Mask Dude/Idle (32x32).png" id="1_jx2ff"]
-[ext_resource type="PackedScene" uid="uid://p7faemsih6rs" path="res://area_2d.tscn" id="2_pdqxm"]
+[ext_resource type="PackedScene" uid="uid://p7faemsih6rs" path="res://collection/area_2d.tscn" id="2_pdqxm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wv3hy"]
 atlas = ExtResource("1_jx2ff")
