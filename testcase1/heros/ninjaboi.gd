@@ -6,6 +6,7 @@ signal shoot(pos: Vector2, direction: bool)
 #shoot mechanism 
 var has_bullet := true
 var facing_right := true
+var direction_x := 0.0
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -18,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	# callback 
 	get_input()
+	get_facing_direction()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -55,5 +57,10 @@ func _physics_process(delta):
 func get_input():
 	if Input.is_action_just_pressed("shoot"):
 		shoot.emit(global_position, facing_right)
+		
+		
+func get_facing_direction():
+	if direction_x != 0:
+		facing_right = direction_x >= 0
 
 	# Replace with function body.
